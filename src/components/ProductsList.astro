@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import ProductCard from "../components/ProductCard.astro";
 const products = await getCollection("products");
 ---
 
@@ -17,7 +18,5 @@ const products = await getCollection("products");
 </style>
 
 <ul>
-  {products.map((product) => <li>{product.data.title}</li>)}
-  <!-- TODO: loop over `products` and render one <li> per product.
-       Start with just the title, swap in <ProductCard /> later. -->
+  {products.map((product) => <li><ProductCard product={product.data} /></li>)}
 </ul>

@@ -116,7 +116,7 @@ const {product} = Astro.props
   }
 </style>
 
-<article class={product.rating > 4.5 ? "popular" : ""}>
+<article class={product.rating.rate > 4.5 ? "popular" : ""}>
   <img src={product.image} alt={product.title} width="300" height="400" />
 
 
